@@ -1,0 +1,44 @@
+import java.text.SimpleDateFormat
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+}
+
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '1.2.2'
+}
+
+project.ext {
+    sparkVersion = '2.3'
+}
+
+compileJava {
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+}
+
+dependencies {
+    testCompile "junit:junit:4.12"
+}
+
+shadowJar {
+    it.dependsOn build
+    mergeServiceFiles()
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    manifest {
+        attributes 'Main-Class': 'se.kd.Main',
+                'Build-Date': new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date())
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.9'
+}
