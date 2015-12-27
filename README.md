@@ -1,5 +1,10 @@
 # Julkalender
 
+## Todo
+
+* Heroku account
+* Create a google analytics account
+
 ## Build
 
 Build and start the project:
