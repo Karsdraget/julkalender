@@ -29,8 +29,22 @@ Build and start the project:
 ./gradlew clean stage --daemon; java -jar build/libs/julkalender-all.jar
 ```
 
+## Logging
+
+Tail the application log
+
+```
+heroku logs --app idagus --tail
+```
+
+## Access
+
 Access it at 
 [localhost:8080](http://localhost:8080)
+
+or live
+
+[http://idagus.herokuapp.com/](http://idagus.herokuapp.com/)
 
 ## Decision log
 
