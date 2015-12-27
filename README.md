@@ -2,8 +2,24 @@
 
 ## Todo
 
-* Heroku account
+* Create a first hatch
+
+* Get Selenium up and running
+  - stage should not run Selenium
+
+* Get Cucumber up and running
+
+* Initiate an admin site
+
+
+* Change owner of Heroku account to Kårsdraget
+  - Blocked, we are waiting for David
+
 * Create a google analytics account
+ - medlem@karsdraget.se can't get a Analytics account
+ 
+* Create mail for tometen@karsdraget.se 
+
 
 ## Build
 
