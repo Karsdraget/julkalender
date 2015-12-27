@@ -10,7 +10,7 @@
 Build and start the project:
 
 ```
-./gradlew clean shadowJar --daemon; java -jar build/libs/julkalender-all.jar
+./gradlew clean stage --daemon; java -jar build/libs/julkalender-all.jar
 ```
 
 Access it at 

@@ -38,6 +38,10 @@ shadowJar {
     }
 }
 
+task stage() {
+    it.dependsOn check, shadowJar
+}
+
 repositories {
     jcenter()
 }
