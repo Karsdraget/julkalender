@@ -15,8 +15,12 @@ public class Main {
 
         int port = getPort();
         port(port);
+
         staticFileLocation("/public");
+
         main();
+        hatch();
+
         awaitInitialization();
     }
 
@@ -25,6 +29,13 @@ public class Main {
         get("/", (request, response) -> {
             Map<String, Object> map = new HashMap<>();
             return new ModelAndView(map, "main.mustache");
+        }, new MustacheTemplateEngine());
+    }
+
+    private static void hatch() {
+        get("/lucka", (request, response) -> {
+            Map<String, Object> map = new HashMap<>();
+            return new ModelAndView(map, "hatch.mustache");
         }, new MustacheTemplateEngine());
     }
 
