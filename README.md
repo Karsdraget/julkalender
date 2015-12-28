@@ -3,6 +3,8 @@
 ## Todo
 
 * Create a first hatch
+  - Work on the template
+  - Get the border around the panel  
 
 * Create date check function
   - It isn't legal to open before the correct date
