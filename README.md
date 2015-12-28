@@ -15,8 +15,6 @@
 
 * Initiate an admin site
   - Preview function - tjuvtitta
-
-* Change owner of Heroku account to Kårsdraget
  
 * Create mail for tometen@karsdraget.se 
 
