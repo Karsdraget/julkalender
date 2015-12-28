@@ -4,22 +4,21 @@
 
 * Create a first hatch
 
+* Create date check function
+  - It isn't legal to open before the correct date
+  - 
+  
 * Get Selenium up and running
   - stage should not run Selenium
 
 * Get Cucumber up and running
 
 * Initiate an admin site
-
+  - Preview function - tjuvtitta
 
 * Change owner of Heroku account to Kårsdraget
-  - Blocked, we are waiting for David
-
-* Create a google analytics account
- - medlem@karsdraget.se can't get a Analytics account
  
 * Create mail for tometen@karsdraget.se 
-
 
 ## Build
 
@@ -45,6 +44,14 @@ Access it at
 or live
 
 [http://idagus.herokuapp.com/](http://idagus.herokuapp.com/)
+
+
+### Mail account
+
+tomten.karsdraget@gmail.com
+
+pw: kd + old phone number, without area code
+
 
 ## Decision log
 
