@@ -1,0 +1,23 @@
+.vers {
+    padding-left: 70px;
+    font-style: italic;
+}
+
+.vvers {
+    padding-left: 20px;
+    padding-right: 10px;
+    font-style: italic;
+}
+
+.fotograf {
+    padding-left: 70px;
+    font-size: 80%;
+}
+
+.long {
+    width: 260px;
+}
+
+.tvknapp {
+    width: 70px;
+}
