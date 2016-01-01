@@ -3,6 +3,15 @@ body {
     background-repeat: repeat;
 }
 
+.hatch-border {
+    background-image: url("/border.jpg");
+    background-repeat: repeat;
+}
+
+.panel {
+    margin-top: 20px;
+}
+
 .vers {
     padding-left: 70px;
     font-style: italic;
