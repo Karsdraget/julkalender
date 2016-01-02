@@ -20,6 +20,8 @@ public class Main {
 
         main();
         hatch();
+        admin();
+        hatchAdmin();
 
         awaitInitialization();
     }
@@ -36,6 +38,20 @@ public class Main {
         get("/lucka", (request, response) -> {
             Map<String, Object> map = new HashMap<>();
             return new ModelAndView(map, "hatch.mustache");
+        }, new MustacheTemplateEngine());
+    }
+
+    private static void admin() {
+        get("/admin", (request, response) -> {
+            Map<String, Object> map = new HashMap<>();
+            return new ModelAndView(map, "admin.mustache");
+        }, new MustacheTemplateEngine());
+    }
+
+    private static void hatchAdmin() {
+        get("/luck-admin", (request, response) -> {
+            Map<String, Object> map = new HashMap<>();
+            return new ModelAndView(map, "hatch_admin.mustache");
         }, new MustacheTemplateEngine());
     }
 
