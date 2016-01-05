@@ -45,24 +45,22 @@
                     <br>
                     <hr>
 
-                    <form class="form-horizontal" role="form" method="post">
+                    <form role="form" method="post">
                         <h3>Kommentarer</h3>
-                        <div class="form-group form-group-lg">
-                            <label class="col-xs-2 control-label" for="name">Jag kallar mig</label>
-                            <div class="col-xs-10">
-                                <input class="form-control" type="text" id="name" name="name">
-                            </div>
-                            <br>
-                            <label class="col-xs-2 control-label" for="comment">Min åsikt är</label>
-                            <div class="col-xs-10">
-                                <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
-                            </div>
-                            <label class="col-xs-7 control-label" for="summa">
-                                Jag är inte besvärlig och kan räkna ut vad 17 + 13 är:
-                            </label>
-                            <div class="col-xs-5">
-                                <input class="form-control" type="text" id="summa" name="summa">
-                            </div>
+
+                        <div class="form-group">
+                            <label for="name">Jag kallar mig</label>
+                            <input class="form-control" type="text" id="name" name="name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="comment">Min åsikt är:</label>
+                            <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="summa">Jag är inte besvärlig och kan räkna ut vad 17 + 13 är:</label>
+                            <input class="form-control" type="text" id="summa" name="summa">
                         </div>
                         <input type="hidden" value="14" name="hatch">
                         <br>
