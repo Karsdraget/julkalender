@@ -8,7 +8,7 @@
     <div class="container">
         <div class="col-xs-1">
         </div>
-        <div class="col-xs-10 hatch-border">
+        <div class="col-xs-11 hatch-border">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1>Lucka 14</h1>
@@ -20,51 +20,69 @@
                     <br>
                 </div>
                 <div class="panel-body">
-                    <iframe width="560"
-                            height="315"
-                            src="https://www.youtube.com/embed/Cj9uJJ1r3cc"
-                            frameborder="0"
-                            allowfullscreen>
-                    </iframe>
-                    <br>
-                    <br>
-                    <p class="vers">
-                        Att dansa är bara <br>
-                        ett annat sätt för dem att vara <br>
-                        vår allra mysigaste lilla styrelseskara
-                    </p>
-
-                    <p class='fotograf'>Foto: kårt
-                        <br>
-                        Vers: mas</p>
-
-                    <br>
-                    <br>
-                    <br>
-                    <hr>
 
                     <form class="form-horizontal" role="form" method="post">
-                        <h3>Kommentarer</h3>
+
                         <div class="form-group form-group-lg">
-                            <label class="col-xs-2 control-label" for="name">Jag kallar mig</label>
-                            <div class="col-xs-10">
-                                <input class="form-control" type="text" id="name" name="name">
+                            <label class="col-xs-1 control-label" for="name">Bilder</label>
+                            <div class="col-xs-11">
+                                <div class="col-xs-2">
+                                    <img src="lucka1.jpg" class="img-responsive img-thumbnail" >
+                                    <br>
+                                    <input class="btn center-block" type="submit" value="Delete">
+                                </div>
+
+                                <div class="col-xs-2">
+                                    <img src="lucka1-1.jpg" class="img-responsive img-thumbnail" >
+                                    <br>
+                                    <input class="btn center-block" type="submit" value="Delete">
+                                </div>
+
+                                <div class="pull-right">
+                                    <input type="file" id="name" name="name">
+                                </div>
                             </div>
-                            <br>
-                            <label class="col-xs-2 control-label" for="comment">Min åsikt är</label>
-                            <div class="col-xs-10">
-                                <textarea class="form-control" rows="3" id="comment" name="comment"></textarea>
+
+                            <label class="col-xs-1 control-label" for="name">Rim</label>
+                            <div class="col-xs-11">
+                                <textarea class="form-control" rows="8" id="comment" name="comment"></textarea>
                             </div>
-                            <label class="col-xs-7 control-label" for="summa">
-                                Jag är inte besvärlig och kan räkna ut vad 17 + 13 är:
-                            </label>
-                            <div class="col-xs-5">
+
+                            <label class="col-xs-1 control-label" for="comment">Vers</label>
+                            <div class="col-xs-11">
                                 <input class="form-control" type="text" id="summa" name="summa">
                             </div>
+
+                            <label class="col-xs-1 control-label" for="comment">Foto</label>
+                            <div class="col-xs-11">
+                                <input class="form-control" type="text" id="summa" name="summa">
+                            </div>
+
+                            <label class="col-xs-1 control-label" for="name">Todo</label>
+                            <div class="col-xs-11">
+                                <textarea class="form-control" rows="8" id="comment" name="comment"></textarea>
+                            </div>
+
                         </div>
                         <input type="hidden" value="14" name="hatch">
                         <br>
-                        <input class="btn pull-right" type="submit" value="Snälla, berätta nu för de andra">
+                        <div class="col-xs-1">
+                        </div>
+
+                        <div class="col-xs-11">
+                            <input class="btn pull-left" type="submit" value="Tjuvtitta">
+                            <div class="pull-right">
+                                <input type="radio" name="status" value="done"> <span
+                                    class="label label-success">Klar</span>
+                                <br>
+                                <input type="radio" name="status" value="undone" checked> <span
+                                    class="label label-primary">Oklar</span>
+                                <br>
+                                <input type="radio" name="status" value="bad"> <span
+                                    class="label label-danger">Dålig</span>
+                            </div>
+                        </div>
+
                     </form>
                     <br>
                     <br>
