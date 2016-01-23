@@ -20,7 +20,7 @@ public class Main {
 
         main();
         hatch();
-        admin();
+        calendarAdmin();
         hatchAdmin();
         frontAdmin();
 
@@ -42,10 +42,10 @@ public class Main {
         }, new MustacheTemplateEngine());
     }
 
-    private static void admin() {
-        get("/admin", (request, response) -> {
+    private static void calendarAdmin() {
+        get("/kalender-admin", (request, response) -> {
             Map<String, Object> map = new HashMap<>();
-            return new ModelAndView(map, "admin.mustache");
+            return new ModelAndView(map, "calendar_admin.mustache");
         }, new MustacheTemplateEngine());
     }
 
