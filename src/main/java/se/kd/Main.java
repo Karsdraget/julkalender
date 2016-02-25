@@ -1,8 +1,12 @@
 package se.kd;
 
+import se.kd.internal.HatchNumber;
+import se.kd.internal.InvalidHatchException;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -36,8 +40,29 @@ public class Main {
     }
 
     private static void hatch() {
-        get("/lucka", (request, response) -> {
+        get("/lucka/:number", (request, response) -> {
+
+            String hatchNumber = request.params(":number");
+
             Map<String, Object> map = new HashMap<>();
+
+            // todo clean! This is way to large
+
+            LocalDate currentDate = LocalDate.now(ZoneId.of("CET"));
+            HatchNumber hatch;
+            try {
+                hatch = new HatchNumber(hatchNumber, currentDate);
+            } catch (InvalidHatchException e) {
+                return new ModelAndView(map, "stop_hatch.mustache");
+            }
+
+            String previous = hatch.getPrevious();
+            String next = hatch.getNext();
+
+            map.put("current", hatchNumber);
+            map.put("previous", previous);
+            map.put("next", next);
+
             return new ModelAndView(map, "hatch.mustache");
         }, new MustacheTemplateEngine());
     }

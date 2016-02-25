@@ -6,8 +6,6 @@
   - Work on the template
   - Get the border around the panel  
 
-* Klura på ett annat proj efter sessionen 5/1
-
 
 * Create date check function
   - It isn't legal to open before the correct date
@@ -21,8 +19,9 @@
 * Initiate an admin site
   - Preview function - tjuvtitta
  
-* Create mail for tometen@karsdraget.se 
-
+* Create mail for tomten@karsdraget.se 
+  Mail sent 2016-02-25
+  
 ## Build
 
 Build and start the project:
