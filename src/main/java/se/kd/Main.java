@@ -1,6 +1,8 @@
 package se.kd;
 
+import se.kd.internal.Hatch;
 import se.kd.internal.HatchNumber;
+import se.kd.internal.Hatches;
 import se.kd.internal.InvalidHatchException;
 import spark.ModelAndView;
 import spark.template.mustache.MustacheTemplateEngine;
@@ -46,16 +48,21 @@ public class Main {
             // todo clean! This is way to large
 
             LocalDate currentDate = LocalDate.now(ZoneId.of("CET"));
-            HatchNumber hatch;
+            HatchNumber hatchNumber1;
             try {
-                hatch = new HatchNumber(hatchNumber, currentDate);
+                hatchNumber1 = new HatchNumber(hatchNumber, currentDate);
             } catch (InvalidHatchException e) {
                 return new ModelAndView(map, "stop_hatch.mustache");
             }
 
-            String previous = hatch.getPrevious();
-            String next = hatch.getNext();
+            String previous = hatchNumber1.getPrevious();
+            String next = hatchNumber1.getNext();
 
+            Hatches hatches = new Hatches();
+
+            Hatch hatch = hatches.getHatch(hatchNumber);
+
+            map.put("hatch", hatch);
             map.put("current", hatchNumber);
             map.put("previous", previous);
             map.put("next", next);
