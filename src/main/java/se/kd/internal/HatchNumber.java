@@ -1,16 +1,12 @@
 package se.kd.internal;
 
-import java.time.LocalDate;
-
 public class HatchNumber {
     private String currentHatch;
-    private LocalDate currentDate;
 
-    public HatchNumber(String currentHatch, LocalDate currentDate) {
-        validate(currentHatch);
+    public HatchNumber(String number) {
+        validate(number);
 
-        this.currentHatch = currentHatch;
-        this.currentDate = currentDate;
+        this.currentHatch = number;
     }
 
     private void validate(String currentHatch) {
@@ -48,5 +44,9 @@ public class HatchNumber {
         }
 
         return current - 1 + "";
+    }
+
+    public String getNumber() {
+        return currentHatch;
     }
 }

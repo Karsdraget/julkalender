@@ -14,7 +14,7 @@ public class HatchNumberTest {
     @Test
     public void get_next() {
         String expected = "14";
-        HatchNumber hatchNumber = new HatchNumber("13", dec13);
+        HatchNumber hatchNumber = new HatchNumber("13");
 
         String actual = hatchNumber.getNext();
 
@@ -24,7 +24,7 @@ public class HatchNumberTest {
     @Test
     public void get_previous() {
         String expected = "12";
-        HatchNumber hatchNumber = new HatchNumber("13", dec13);
+        HatchNumber hatchNumber = new HatchNumber("13");
 
         String actual = hatchNumber.getPrevious();
 
@@ -34,7 +34,7 @@ public class HatchNumberTest {
     @Test
     public void do_not_go_below_one() {
         String expected = "1";
-        HatchNumber hatchNumber = new HatchNumber("1", notImportant);
+        HatchNumber hatchNumber = new HatchNumber("1");
 
         String actual = hatchNumber.getPrevious();
 
@@ -44,7 +44,7 @@ public class HatchNumberTest {
     @Test
     public void do_not_go_above_twenty_four() {
         String expected = "24";
-        HatchNumber hatchNumber = new HatchNumber("24", notImportant);
+        HatchNumber hatchNumber = new HatchNumber("24");
 
         String actual = hatchNumber.getNext();
 
@@ -53,16 +53,16 @@ public class HatchNumberTest {
 
     @Test(expected = InvalidHatchException.class)
     public void twenty_five_is_an_invalid_hatch() {
-        new HatchNumber("25", notImportant);
+        new HatchNumber("25");
     }
 
     @Test(expected = InvalidHatchException.class)
     public void zero_is_an_invalid_hatch() {
-        new HatchNumber("0", notImportant);
+        new HatchNumber("0");
     }
 
     @Test(expected = InvalidHatchException.class)
     public void foo_is_an_invalid_hatch() {
-        new HatchNumber("foo", notImportant);
+        new HatchNumber("foo");
     }
 }

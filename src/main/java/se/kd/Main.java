@@ -15,6 +15,9 @@ import java.util.Map;
 import static spark.Spark.*;
 
 public class Main {
+
+    private static Hatches hatches = new Hatches();
+
     public static void main(String... args) {
         int port = getPort();
         port(port);
@@ -47,25 +50,18 @@ public class Main {
 
             // todo clean! This is way to large
 
+            // todo check that we are not peeking ahead
             LocalDate currentDate = LocalDate.now(ZoneId.of("CET"));
             HatchNumber hatchNumber1;
             try {
-                hatchNumber1 = new HatchNumber(hatchNumber, currentDate);
+                hatchNumber1 = new HatchNumber(hatchNumber);
             } catch (InvalidHatchException e) {
                 return new ModelAndView(map, "stop_hatch.mustache");
             }
 
-            String previous = hatchNumber1.getPrevious();
-            String next = hatchNumber1.getNext();
-
-            Hatches hatches = new Hatches();
-
             Hatch hatch = hatches.getHatch(hatchNumber);
 
             map.put("hatch", hatch);
-            map.put("current", hatchNumber);
-            map.put("previous", previous);
-            map.put("next", next);
 
             return new ModelAndView(map, "hatch.mustache");
         }, new MustacheTemplateEngine());
@@ -74,13 +70,22 @@ public class Main {
     private static void calendarAdmin() {
         get("/kalender-admin", (request, response) -> {
             Map<String, Object> map = new HashMap<>();
+            map.put("hatches", hatches.getAll());
+
             return new ModelAndView(map, "calendar_admin.mustache");
         }, new MustacheTemplateEngine());
     }
 
     private static void hatchAdmin() {
-        get("/luck-admin", (request, response) -> {
+        get("/luck-admin/:number", (request, response) -> {
+            String hatchNumber = request.params(":number");
+
             Map<String, Object> map = new HashMap<>();
+
+            Hatch hatch = hatches.getHatch(hatchNumber);
+
+            map.put("hatch", hatch);
+
             return new ModelAndView(map, "hatch_admin.mustache");
         }, new MustacheTemplateEngine());
     }

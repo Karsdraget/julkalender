@@ -6,13 +6,17 @@ public class Hatch {
     private String rhyme;
     private String photographer;
     private String vers;
+    private HatchNumber hatchNumber;
 
-    public Hatch(String rhyme, String photographer, String vers) {
+    public Hatch(String rhyme, String photographer, String vers, String number) {
         this.rhyme = rhyme;
         this.photographer = photographer;
         this.vers = vers;
+        hatchNumber = new HatchNumber(number);
     }
 
+    // todo get a html formated version
+    // todo get a non html formated version
     public String getRhyme() {
         return rhyme;
     }
@@ -38,5 +42,17 @@ public class Hatch {
     @Override
     public int hashCode() {
         return Objects.hash(rhyme, photographer, vers);
+    }
+
+    public String getNumber() {
+        return hatchNumber.getNumber();
+    }
+
+    public String getNext() {
+        return hatchNumber.getNext();
+    }
+
+    public String getPrevious() {
+        return hatchNumber.getPrevious();
     }
 }
