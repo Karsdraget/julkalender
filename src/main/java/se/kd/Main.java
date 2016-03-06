@@ -16,6 +16,8 @@ import static spark.Spark.*;
 
 public class Main {
 
+    // todo Man ska inte kunna flytta en lucka efter att tiden har passerat i listan över alla luckor
+
     private static Hatches hatches = new Hatches();
 
     public static void main(String... args) {
